@@ -8,14 +8,13 @@ function Snake() {
 
 
     this.draw= function(){
-        ctx.fillStyle = "FFFFFF";
+        ctx.fillStyle = "#FFFFFF";
 
         for (let i=0; i< this.tail.length; i++){
             ctx.fillRect(this.tail[i].x, this.tail[i].y, scale, scale);
         }
 
-
-        ctx.fillRect(this.x, this.y , scale, scale);
+        ctx.fillRect(this.x, this.y, scale, scale);
     }
 
     this.update = function(){
@@ -42,7 +41,7 @@ function Snake() {
         }
 
         if (this.y < 0) {
-            this.x = canvas.height;
+            this.y = canvas.height;
         }
     }
 
@@ -68,7 +67,7 @@ function Snake() {
     }
 
     this.eat = function(fruit){
-        if (this.x == fruit.x &&  this.y == fruit.y) {
+        if (this.x === fruit.x &&  this.y === fruit.y) {
             this.total++;
             return true;
         }
@@ -76,4 +75,12 @@ function Snake() {
         return false;
     }
 
+    this.checkCollision = function(){
+        for (var i=0; i<this.tail.length;i++){
+            if (this.x === this.tail[i].x  && this.y ===this.tail[i].y){
+                this.total=0;
+                this.tail = [];
+            }
+        }
+    }
 }
