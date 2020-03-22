@@ -9,7 +9,7 @@ function Fruit(){
     }
 
     this.draw = function(){
-        ctx.fillStyle = "FF0000";
+        ctx.fillStyle = "#fb6c6c";
         ctx.fillRect(this.x, this.y, scale, scale);
     }
 }

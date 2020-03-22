@@ -6,8 +6,8 @@ const columns= canvas.width /scale;
 var snake;
 
 (function setup() {
-    snake  = new Snake();
-    fruit= new Fruit();
+    snake = new Snake();
+    fruit = new Fruit();
     fruit.pickLocation();
 
     window.setInterval(() => {
@@ -22,9 +22,10 @@ var snake;
 
         snake.checkCollision();
         document.querySelector('.score')
-            .innerText = snake.total;
+          .innerText = snake.total;
 
     }, 250);
+
 }());
 
 window.addEventListener('keydown' , ((evt) => {
